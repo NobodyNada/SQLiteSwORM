@@ -1,0 +1,16 @@
+language: generic
+sudo: required
+
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+      
+    - os: osx
+      osx_image: xcode9.3
+      
+env: SWIFT_VERSION=4.1
+install: eval "$(curl -sL https://swiftenv.fuller.li/install.sh)"
+
+script:
+  - swift test
